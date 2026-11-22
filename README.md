@@ -1,6 +1,6 @@
 # Heat-related climate risk analysis tool · Seville 2050
 
-**Live viewer:** https://sola-caraballo.github.io/seville-heat-risk/
+**Live viewer:** https://j-sola-caraballo.github.io/seville-heat-risk/
 
 Interactive bilingual (Spanish / English) viewer of heat-related climate risk in Seville in 2050, by census tract. It combines heat hazard and socioeconomic vulnerability in a single map.
 
