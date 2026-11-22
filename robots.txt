@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sola-caraballo.github.io/seville-heat-risk/sitemap.xml
+Sitemap: https://j-sola-caraballo.github.io/seville-heat-risk/sitemap.xml
