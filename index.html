@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Herramienta de análisis de riesgo climático por calor | Sevilla 2050</title>
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://sola-caraballo.github.io/seville-heat-risk/">
+<meta name="description" content="Mapa interactivo del riesgo climático por calor en Sevilla en 2050: amenaza térmica y vulnerabilidad socioeconómica en cada sección censal. Universidad de Sevilla.">
+<meta name="author" content="Javier de Sola Caraballo; Victoria Patricia López Cabeza; Antonio Serrano Jiménez; Carlos Rivera Gómez; Carmen Galán Marín">
+<meta name="theme-color" content="#631673">
+<!-- Google Search Console: pegue aqui la etiqueta de verificacion si elige ese metodo
+<meta name="google-site-verification" content="CODIGO">
+-->
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Riesgo climático por calor · Sevilla 2050">
+<meta property="og:url" content="https://sola-caraballo.github.io/seville-heat-risk/">
+<meta property="og:title" content="Riesgo climático por calor en Sevilla 2050 · Seville heat risk map">
+<meta property="og:description" content="Mapa interactivo del riesgo climático por calor en Sevilla en 2050: amenaza térmica y vulnerabilidad socioeconómica en cada sección censal. Universidad de Sevilla. · Interactive map of heat-related climate risk in Seville (2050) by census tract.">
+<meta property="og:image" content="https://sola-caraballo.github.io/seville-heat-risk/assets/img/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mapa de riesgo climático por calor en Sevilla 2050 por sección censal / Heat risk map of Seville 2050 by census tract">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Riesgo climático por calor en Sevilla 2050 · Seville heat risk map">
+<meta name="twitter:description" content="Mapa interactivo del riesgo climático por calor en Sevilla en 2050: amenaza térmica y vulnerabilidad socioeconómica en cada sección censal. Universidad de Sevilla. · Interactive map of heat-related climate risk in Seville (2050) by census tract.">
+<meta name="twitter:image" content="https://sola-caraballo.github.io/seville-heat-risk/assets/img/og-image.jpg">
+<meta name="twitter:image:alt" content="Mapa de riesgo climático por calor en Sevilla 2050 / Heat risk map of Seville 2050">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Herramienta de análisis de riesgo climático por calor | Sevilla 2050", "alternateName": "Heat-related climate risk analysis tool | Seville 2050", "url": "https://sola-caraballo.github.io/seville-heat-risk/", "description": "Mapa interactivo del riesgo climático por calor en Sevilla en 2050: amenaza térmica y vulnerabilidad socioeconómica en cada sección censal. Universidad de Sevilla.", "applicationCategory": "EducationalApplication", "operatingSystem": "Any (web browser)", "inLanguage": ["es", "en"], "isAccessibleForFree": true, "image": "https://sola-caraballo.github.io/seville-heat-risk/assets/img/og-image.jpg", "author": [{"@type": "Person", "name": "Javier de Sola Caraballo"}, {"@type": "Person", "name": "Victoria Patricia López Cabeza"}, {"@type": "Person", "name": "Antonio Serrano Jiménez"}, {"@type": "Person", "name": "Carlos Rivera Gómez"}, {"@type": "Person", "name": "Carmen Galán Marín"}], "publisher": {"@type": "CollegeOrUniversity", "name": "Universidad de Sevilla", "url": "https://www.us.es/"}, "spatialCoverage": {"@type": "Place", "name": "Sevilla, España"}, "about": ["riesgo climático", "calor urbano", "vulnerabilidad socioeconómica", "Sevilla", "climate risk", "urban heat"], "isBasedOn": {"@type": "ScholarlyArticle", "name": "A predictive framework for urban climate risk: Mapping heat hazard and socioeconomic vulnerability at high resolution scenarios", "sameAs": "https://doi.org/10.1016/j.uclim.2026.103156", "datePublished": "2026", "isPartOf": {"@type": "Periodical", "name": "Urban Climate"}}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}}</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.css">
+<link rel="stylesheet" href="css/style.css?v=33">
+</head>
+<body>
+<header class="top">
+  <div class="titles"><h1 data-i18n="site_title">Herramienta de análisis de riesgo climático por calor | Sevilla 2050</h1><p data-i18n="site_sub">Amenaza térmica y vulnerabilidad socioeconómica por sección censal</p></div>
+  <div class="menu" id="menu"><nav class="tabs" id="tabs"></nav><div class="logos menulogos"><a href="https://grupo.us.es/tep206/" target="_blank" rel="noopener"><img src="assets/logos/logo_SATH_TEP206_nuevo.png" alt="SATH TEP-206"></a>
+    <a href="https://grupo.us.es/tep206/cool-and-scape/" target="_blank" rel="noopener"><img src="assets/logos/logo_Cool-and-scape.png" alt="Cool&amp;scape"></a>
+    <a href="https://www.us.es/" target="_blank" rel="noopener" class="us"><img src="assets/logos/logo_universidad_sevilla.png" alt="Universidad de Sevilla"></a></div></div>
+  <div class="lang" role="group" aria-label="Idioma / Language">
+    <button id="lang-es" data-lang="es">ES</button><button id="lang-en" data-lang="en">EN</button>
+  </div>
+  <div class="logos toplogos">
+    <a href="https://grupo.us.es/tep206/" target="_blank" rel="noopener"><img src="assets/logos/logo_SATH_TEP206_nuevo.png" alt="SATH TEP-206"></a>
+    <a href="https://grupo.us.es/tep206/cool-and-scape/" target="_blank" rel="noopener"><img src="assets/logos/logo_Cool-and-scape.png" alt="Cool&amp;scape"></a>
+    <a href="https://www.us.es/" target="_blank" rel="noopener" class="us"><img src="assets/logos/logo_universidad_sevilla.png" alt="Universidad de Sevilla"></a>
+  </div>
+  <button id="burger" class="burger" aria-label="Menú" aria-expanded="false">&#9776;</button>
+</header>
+
+<main>
+  <section id="page-inicio" class="page text"><div class="hero"><div class="wrap"><h2 data-i18n-html="inicio_h">Herramienta de análisis de riesgo climático por calor<br>Sevilla 2050</h2></div></div><div class="wrap"><div data-i18n-html="inicio_html">
+    <p class="lead2">Esta herramienta y su visor interactivo están basados en los resultados de un estudio publicado en la revista <a href="https://doi.org/10.1016/j.uclim.2026.103156" target="_blank" rel="noopener"><i>Urban Climate</i>, 2026</a>.</p>
+    <p>La herramienta muestra, para cada sección censal de la ciudad de Sevilla, el nivel de riesgo climático proyectado para 2050. Este nivel se obtiene con la metodología propuesta en el artículo citado, a partir de la coincidencia, en cada zona, de la amenaza térmica por calor y de la vulnerabilidad socioeconómica de sus habitantes.</p>
+    <p>El calor no incide por igual en todo el territorio, ni todas las personas cuentan con las mismas condiciones para afrontarlo. El objetivo es ofrecer un diagnóstico, con mapa e información detallada, de dónde y por qué el calor afecta más a unas partes de la ciudad que a otras. La herramienta permite ver cómo se distribuye dentro de la ciudad y cuáles son las condiciones promedio de la población de cada sección censal para hacerle frente.</p>
+    <p class="pubh"><strong>Publicación original:</strong></p>
+    <p class="cite">Sola-Caraballo, J., López-Cabeza, V. P., Serrano-Jiménez, A., Rivera-Gomez, C. y Galan-Marin, C. (2026). <i>A predictive framework for urban climate risk: Mapping heat hazard and socioeconomic vulnerability at high resolution scenarios</i>. <i>Urban Climate</i>, 70, 103156. <a href="https://doi.org/10.1016/j.uclim.2026.103156" target="_blank" rel="noopener">https://doi.org/10.1016/j.uclim.2026.103156</a></p>
+    <p class="pubh"><strong>Autores del estudio:</strong></p>
+    <ul class="authors"><li><a href="https://prisma.us.es/investigador/8683" target="_blank" rel="noopener">Javier de Sola Caraballo</a></li><li><a href="https://prisma.us.es/investigador/6652" target="_blank" rel="noopener">Victoria Patricia López Cabeza</a></li><li><a href="https://produccioncientifica.ugr.es/investigadores/357493/detalle" target="_blank" rel="noopener">Antonio Serrano Jiménez</a></li><li><a href="https://prisma.us.es/investigador/3567" target="_blank" rel="noopener">Carlos Rivera Gómez</a></li><li><a href="https://prisma.us.es/investigador/1403" target="_blank" rel="noopener">Carmen Galán Marín</a></li></ul>
+    <p>La investigación se ha realizado en el grupo <a href="https://grupo.us.es/tep206/" target="_blank" rel="noopener">TEP-206 SATH (Sostenibilidad en Arquitectura, Tecnología y Patrimonio)</a>, como parte de la tesis doctoral de <strong><a href="https://prisma.us.es/investigador/8683" target="_blank" rel="noopener">Javier de Sola Caraballo</a></strong>, en la <a href="https://www.us.es/" target="_blank" rel="noopener">Universidad de Sevilla</a>, y se ha desarrollado dentro del proyecto <a href="https://grupo.us.es/tep206/cool-and-scape/" target="_blank" rel="noopener">Cool&amp;scape</a>, que también la ha financiado.</p>
+    <h3>¿Qué analiza esta investigación?</h3>
+    <p>Analiza el riesgo climático por calor esperado en 2050, entendido como la coincidencia de la <strong>amenaza térmica</strong> y de la <strong>vulnerabilidad socioeconómica</strong> de la población para afrontarlo.</p>
+    <div class="cards two">
+      <div class="card"><div class="ci">🌡️</div><h4>Amenaza térmica</h4><p>Se parte de un clima estimado para el año 2050 y de la temperatura del aire simulada hora a hora. Se analizan tres facetas del calor: las horas de calor extremo durante el día, el estrés térmico durante la noche y el calor acumulado, que condiciona la demanda de refrigeración.</p></div>
+      <div class="card"><div class="ci">👥</div><h4>Vulnerabilidad socioeconómica</h4><p>Se consideran tres factores que condicionan la capacidad de hacer frente al calor: la renta de los hogares, que determina el acceso a la climatización y a otros recursos; la edad de la población (mayores de 65 años), que sufre en mayor medida las consecuencias médicas de la exposición; y la edad de la edificación, relacionada con el aislamiento y la protección frente a las temperaturas extremas.</p></div>
+    </div>
+    <div class="card result"><div class="ci">🗺️</div><div><h4>Riesgo climático</h4><p>El riesgo climático se determina como la coincidencia, en una misma zona, de amenaza térmica y vulnerabilidad socioeconómica. Se gradúa en un mapa con cuatro niveles de amenaza (de 0 a 3) y cuatro de vulnerabilidad (de 0 a 3). El mapa final indica en qué zonas de la ciudad coinciden el calor y la vulnerabilidad, y con qué intensidad.</p></div></div>
+    <p class="notice"><strong>Importante:</strong> las temperaturas son el resultado de una simulación para un escenario climático futuro, y las condiciones de vulnerabilidad proceden de datos socioeconómicos promediados por sección censal. Los resultados no se han contrastado con mediciones. El producto final es un diagnóstico comparativo dentro de la ciudad, promediado en cada sección censal.</p>
+    <div class="cta"><button class="btn" data-go="visor">Explorar el mapa</button> <button class="btn ghost" data-go="que">Qué se ha hecho</button></div></div>
+    <div class="fund"><h3 data-i18n="fund_h">Financiación</h3><p data-i18n-html="fund_txt">Esta investigación ha sido financiada por los proyectos <a href="https://investigacion.us.es/sisius/sis_proyecto.php?idproy=35409" target="_blank" rel="noopener">PID2021-124539OB-I00</a> y <a href="https://investigacion.us.es/sisius/sis_proyecto.php?idproy=41052" target="_blank" rel="noopener">PID2024-155805OB-C21</a> (MCIN/AEI/10.13039/501100011033 y «FEDER, una manera de hacer Europa») y por el contrato predoctoral FPU21/02458 (programa FPU, Ministerio de Ciencia, Innovación y Universidades).</p><img src="assets/logos/logo_MICIU_UE_AEI.webp" alt="MICIU, UE, AEI"></div></div></section>
+  <section id="page-que" class="page text"><div class="hero"><div class="wrap"><h2 data-i18n="que_h">Qué se ha hecho</h2></div></div><div class="wrap"><div data-i18n-html="que_html">
+    <p>Se aplica el concepto de riesgo del <a href="https://www.ipcc.ch/report/ar6/wg2/" target="_blank" rel="noopener">Sexto Informe de Evaluación del IPCC (AR6)</a>, que entiende el riesgo climático como la interacción de tres componentes: la <strong>amenaza</strong>, la <strong>exposición</strong> y la <strong>vulnerabilidad</strong>. Así, el riesgo no se encuentra necesariamente donde más calor hace, sino donde el calor afecta a hogares que disponen de menos recursos para afrontarlo.</p>
+    <figure class="venn">
+      <svg viewBox="0 0 440 330" role="img" aria-label="Amenaza, exposición y vulnerabilidad se cruzan en el riesgo climático">
+        <circle cx="160" cy="125" r="105" fill="#cf8335" fill-opacity=".42" stroke="#b0621a" stroke-width="1.5"/>
+        <circle cx="280" cy="125" r="105" fill="#9aa4ad" fill-opacity=".45" stroke="#6b7785" stroke-width="1.5"/>
+        <circle cx="220" cy="222" r="105" fill="#89a0cc" fill-opacity=".5" stroke="#556ba4" stroke-width="1.5"/>
+        <text x="110" y="88" text-anchor="middle" font-weight="700" font-size="15" fill="#6e3a0c">Amenaza</text><text x="110" y="106" text-anchor="middle" font-size="11.5" fill="#6e3a0c">térmica por calor</text>
+        <text x="330" y="88" text-anchor="middle" font-weight="700" font-size="15" fill="#3d4650">Exposición</text><text x="330" y="106" text-anchor="middle" font-size="11.5" fill="#3d4650">población residente</text>
+        <text x="220" y="288" text-anchor="middle" font-weight="700" font-size="15" fill="#2b3f73">Vulnerabilidad</text><text x="220" y="306" text-anchor="middle" font-size="11.5" fill="#2b3f73">socioeconómica</text>
+        <circle cx="220" cy="156" r="40" fill="#89628C" fill-opacity=".95" stroke="#631673" stroke-width="1.5"/><text x="220" y="152" text-anchor="middle" font-weight="800" font-size="15" fill="#fff">RIESGO</text><text x="220" y="168" text-anchor="middle" font-size="11" fill="#fff">climático</text>
+      </svg>
+      <figcaption>El riesgo climático aparece donde se cruzan la amenaza, la exposición y la vulnerabilidad (marco conceptual del IPCC AR6).</figcaption>
+    </figure>
+    <div class="cards">
+      <div class="card"><div class="ci">🌡️</div><h4>Amenaza</h4><p>Se evalúa con tres índices calculados a partir de la temperatura del aire simulada hora a hora:</p><ul class="bl"><li><strong>Horas por encima de la temperatura de disparo</strong> (40 °C): temperatura a partir de la cual aumentan las muertes asociadas al calor.</li><li><strong>Exceso de calor nocturno</strong>: estrés térmico durante la noche, que impide la recuperación fisiológica normal.</li><li><strong>Grados-hora de refrigeración</strong>: calor acumulado, que se traduce en una mayor demanda de energía para climatizar las viviendas.</li></ul></div>
+      <div class="card"><div class="ci">🏘️</div><h4>Exposición</h4><p>Es la presencia de población residente. Se aplica como un filtro según la densidad de población (≥ 1.200 habitantes/km²), para centrar el análisis en el tejido residencial consolidado, donde vive la población que se quiere proteger.</p></div>
+      <div class="card"><div class="ci">👥</div><h4>Vulnerabilidad</h4><p>Se evalúan tres factores que condicionan la capacidad de hacer frente al calor:</p><ul class="bl"><li><strong>Renta de los hogares</strong>, asociada al acceso a climatización y a la posibilidad de rehabilitar la vivienda.</li><li><strong>Edad de la población</strong> (65 años o más), con mayor sensibilidad médica al calor.</li><li><strong>Antigüedad de los edificios</strong>, relacionada con su aislamiento y con la protección que ofrecen frente al calor.</li></ul></div>
+    </div>
+    <div class="card wide"><div class="ci">🗺️</div><h4>Riesgo</h4><p>El índice de riesgo climático se construye por comparación dentro de la propia ciudad, a partir de las distribuciones de cada índice en percentiles. Una sección censal se marca como <strong>crítica</strong> cuando se sitúa en el 20 % de los casos más extremos, es decir, cuando supera el percentil 80 (en la renta, cuando queda por debajo del percentil 20; en la edificación, cuando es de 1979 o anterior).</p><p>Cada marca suma un punto: para cada sección se cuenta cuántos de los tres indicadores de amenaza (H) y cuántos de los tres de vulnerabilidad (V) son críticos, de modo que ambos niveles van de 0 a 3. Esas dos cuentas la sitúan en una de las 16 casillas de un <strong>mapa bivariado de 4×4 clases</strong>, que indica en qué secciones censales coinciden el calor y la vulnerabilidad, y con qué intensidad.</p><p>El análisis se aplica a las secciones residenciales de la ciudad y su resultado es un diagnóstico relativo, que compara unas zonas con otras, y no un valor absoluto.</p></div></div></div></section>
+
+  <section id="page-visor" class="page visor">
+    <div class="mapwrap"><div id="map"></div>
+      <div class="mapui" id="mapui">
+        <div class="searchbox"><span class="ico">&#128269;</span><input id="search" type="search" autocomplete="off"></div>
+        <ul id="results"></ul>
+        <button id="btn-layers" class="lbtn"><span class="ico">&#9776;</span> <span data-i18n="layers"></span></button>
+        <div id="layerpanel" class="lpanel" hidden>
+          <h3 data-i18n="layers"></h3><div id="layerlist"></div>
+          <h3 data-i18n="basemap"></h3>
+          <label class="slider"><span data-i18n="sat_opacity"></span><input id="op-sat" type="range" min="0" max="100" value="80"></label>
+          <label class="slider"><span data-i18n="layer_opacity"></span><input id="op-layer" type="range" min="10" max="100" value="85"></label>
+          <label class="row"><input id="bld-toggle" type="checkbox" checked> <span data-i18n="bld"></span></label>
+          <label class="slider"><span data-i18n="bld_opacity"></span><input id="op-bld" type="range" min="10" max="100" value="55"></label>
+        </div>
+      </div>
+      <div id="legend" class="maplegend"></div>
+      <div id="tip" class="tip" hidden></div>
+    </div>
+    <aside class="ficha" id="ficha" hidden></aside>
+  </section>
+
+  <section id="page-metodo" class="page text"><div class="hero"><div class="wrap"><h2 data-i18n="metodo_h"></h2></div></div><div class="wrap"><div data-i18n-html="metodo_html"></div></div></section>
+  <section id="page-uso" class="page text"><div class="hero"><div class="wrap"><h2 data-i18n="uso_h"></h2></div></div><div class="wrap"><div data-i18n-html="uso_html"></div></div></section>
+  <section id="page-datos" class="page text"><div class="hero"><div class="wrap"><h2 data-i18n="datos_h"></h2></div></div><div class="wrap"><div data-i18n-html="datos_html"></div></div></section>
+</main>
+
+<div id="pop" class="pop" hidden></div>
+<div id="disc" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="disc-t"><div class="modal-box"><button id="disc-x" class="modal-x" data-i18n-aria="disc_close">&#10005;</button><h3 id="disc-t" data-i18n="disc_title"></h3><div data-i18n-html="disc_html"></div><div class="modal-act"><button id="disc-ok" class="btn" data-i18n="disc_ok"></button></div></div></div>
+<div id="pv" class="modal" hidden role="dialog" aria-modal="true"><div class="modal-box pvbox"><div class="pvbody"></div></div></div>
+<footer class="citebar"><span class="cb-long" data-i18n-html="cite_bar"></span><span class="cb-short" data-i18n-html="cite_short"></span> <a href="https://doi.org/10.1016/j.uclim.2026.103156" target="_blank" rel="noopener">doi:10.1016/j.uclim.2026.103156</a> <span class="credit" data-i18n-html="web_credit_html"></span></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.js"></script>
+<script src="js/config.js?v=33"></script>
+<script src="js/i18n.js?v=33"></script>
+<script src="js/app.js?v=33"></script>
+</body>
+</html>
